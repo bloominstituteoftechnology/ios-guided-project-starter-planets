@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27519B402304F18F00A213F1 /* PlanetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27519B3F2304F18F00A213F1 /* PlanetsCollectionViewController.swift */; };
+		27519B432304F2F800A213F1 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27519B422304F2F800A213F1 /* PlanetCollectionViewCell.swift */; };
+		27519B452304FA9A00A213F1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27519B442304FA9A00A213F1 /* SettingsViewController.swift */; };
+		27519B472305000200A213F1 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27519B462305000200A213F1 /* SettingsKeys.swift */; };
 		9DDBBD072113609700A55978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBD062113609700A55978 /* AppDelegate.swift */; };
 		9DDBBD0C2113609700A55978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0A2113609700A55978 /* Main.storyboard */; };
 		9DDBBD0E2113609800A55978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0D2113609800A55978 /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27519B3F2304F18F00A213F1 /* PlanetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewController.swift; sourceTree = "<group>"; };
+		27519B422304F2F800A213F1 /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
+		27519B442304FA9A00A213F1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		27519B462305000200A213F1 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		9DDBBD032113609700A55978 /* Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDBBD062113609700A55978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DDBBD0B2113609700A55978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,9 +45,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27519B412304F2D300A213F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27519B422304F2F800A213F1 /* PlanetCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		27F670EB21EFC6AA0035C1BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				27519B3F2304F18F00A213F1 /* PlanetsCollectionViewController.swift */,
+				27519B442304FA9A00A213F1 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -67,6 +85,7 @@
 				27F670EB21EFC6AA0035C1BF /* View Controllers */,
 				9DDBBD1A211360D500A55978 /* Model */,
 				9DDBBD1C211360E000A55978 /* Model Controller */,
+				27519B412304F2D300A213F1 /* Views */,
 				9DDBBD1B211360DA00A55978 /* Resources */,
 			);
 			path = Planets;
@@ -87,6 +106,7 @@
 				9DDBBD0D2113609800A55978 /* Assets.xcassets */,
 				9DDBBD0F2113609800A55978 /* LaunchScreen.storyboard */,
 				9DDBBD122113609800A55978 /* Info.plist */,
+				27519B462305000200A213F1 /* SettingsKeys.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,7 +193,11 @@
 			files = (
 				9DDBBD1F211360F500A55978 /* PlanetController.swift in Sources */,
 				9DDBBD072113609700A55978 /* AppDelegate.swift in Sources */,
+				27519B432304F2F800A213F1 /* PlanetCollectionViewCell.swift in Sources */,
+				27519B402304F18F00A213F1 /* PlanetsCollectionViewController.swift in Sources */,
 				9DDBBD19211360D100A55978 /* Planet.swift in Sources */,
+				27519B452304FA9A00A213F1 /* SettingsViewController.swift in Sources */,
+				27519B472305000200A213F1 /* SettingsKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,13 +342,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = "$(SRCROOT)/Planets/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.Planets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschoolJoeRogers.Planets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,13 +360,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = "$(SRCROOT)/Planets/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.Planets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschoolJoeRogers.Planets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
