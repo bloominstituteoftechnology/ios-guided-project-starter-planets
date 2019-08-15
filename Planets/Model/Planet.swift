@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//represents the object
 struct Planet {
     
     var name: String

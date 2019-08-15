@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//handles the data for the model
 class PlanetController {
     var planets = [
         Planet(name: "Mercury", imageName: "mercury"),
