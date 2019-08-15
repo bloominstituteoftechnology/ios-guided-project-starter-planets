@@ -42,19 +42,59 @@
             </objects>
             <point key="canvasLocation" x="-338" y="451"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="wqn-AN-iiw">
             <objects>
-                <viewController id="jiU-59-4c3" sceneMemberID="viewController">
+                <viewController id="jiU-59-4c3" customClass="SettingsViewController" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4FY-7c-rmh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-Yn-K5G">
+                                <rect key="frame" x="15" y="79" width="345" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Pluto a planet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-il-Upd">
+                                        <rect key="frame" x="0.0" y="0.0" width="296" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-QX-oN1">
+                                        <rect key="frame" x="296" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeShouldShowPluto:" destination="jiU-59-4c3" eventType="valueChanged" id="Hgy-se-dP2"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z82-W1-RMU">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem width="320" style="plain" systemItem="fixedSpace" id="YiR-nX-q3G"/>
+                                    <barButtonItem systemItem="done" id="YpP-av-41A">
+                                        <connections>
+                                            <segue destination="c95-jq-fng" kind="unwind" unwindAction="unwindToPlanetsCollectionViewController:" id="g8D-2P-5XE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ozV-Yn-K5G" firstAttribute="top" secondItem="zXJ-kh-tJy" secondAttribute="top" constant="15" id="3pD-GX-zRS"/>
+                            <constraint firstItem="ozV-Yn-K5G" firstAttribute="leading" secondItem="zXJ-kh-tJy" secondAttribute="leading" constant="15" id="EIZ-H7-aFN"/>
+                            <constraint firstItem="zXJ-kh-tJy" firstAttribute="trailing" secondItem="ozV-Yn-K5G" secondAttribute="trailing" constant="15" id="oTg-o1-AQg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zXJ-kh-tJy"/>
                     </view>
                     <navigationItem key="navigationItem" id="sBx-ik-nay"/>
+                    <connections>
+                        <outlet property="shouldShowPlutoSwitch" destination="8FT-QX-oN1" id="fEL-tN-qLC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLI-WK-YNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="c95-jq-fng" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="514" y="450"/>
         </scene>
@@ -67,17 +107,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dxu-g8-t0N">
-                            <size key="itemSize" width="140" height="160"/>
+                            <size key="itemSize" width="120" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlanetCell" id="S6i-ej-hoP" customClass="PlanetCollectionViewCell" customModule="Planets" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="140" height="160"/>
+                                <rect key="frame" x="5" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="140" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8h-NX-jmE">

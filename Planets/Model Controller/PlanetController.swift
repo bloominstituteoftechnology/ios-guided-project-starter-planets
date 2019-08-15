@@ -9,14 +9,22 @@
 import Foundation
 //handles the data for the model
 class PlanetController {
-    var planets = [
-        Planet(name: "Mercury", imageName: "mercury"),
-        Planet(name: "Venus", imageName: "venus"),
-        Planet(name: "Earth", imageName: "earth"),
-        Planet(name: "Mars", imageName: "mars"),
-        Planet(name: "Jupiter", imageName: "jupiter"),
-        Planet(name: "Saturn", imageName: "saturn"),
-        Planet(name: "Uranus", imageName: "uranus"),
-        Planet(name: "Neptune", imageName: "neptune"),
+    var planets: [Planet]  {
+        var temp = [
+            Planet(name: "Mercury", imageName: "mercury"),
+            Planet(name: "Venus", imageName: "venus"),
+            Planet(name: "Earth", imageName: "earth"),
+            Planet(name: "Mars", imageName: "mars"),
+            Planet(name: "Jupiter", imageName: "jupiter"),
+            Planet(name: "Saturn", imageName: "saturn"),
+            Planet(name: "Uranus", imageName: "uranus"),
+            Planet(name: "Neptune", imageName: "neptune"),
         ]
+        
+        let shouldShowPluto = UserDefaults.standard.bool(forKey: String.shouldShowPlutoKey)
+        if shouldShowPluto {
+            temp.append(Planet(name: "Pluto", imageName: "pluto"))
+        }
+        return temp
+    }
 }

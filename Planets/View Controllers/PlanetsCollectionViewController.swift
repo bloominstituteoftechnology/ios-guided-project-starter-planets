@@ -18,7 +18,11 @@ class PlanetsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView?.reloadData()
+    }
     /*
     // MARK: - Navigation
 
@@ -51,6 +55,10 @@ class PlanetsCollectionViewController: UICollectionViewController {
         
     
         return cell
+    }
+    
+    @IBAction func unwindToPlanetsCollectionViewController(_ sender: UIStoryboardSegue){
+        
     }
 
     // MARK: UICollectionViewDelegate
